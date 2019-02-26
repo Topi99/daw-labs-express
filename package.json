@@ -1,0 +1,16 @@
+{
+  "name": "daw-lab-express",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/Topi99/daw-labs-express.git",
+  "author": "Topiltzin <nokoayzack@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
+    "pug": "^2.0.3"
+  },
+  "scripts": {
+    "dev": "nodemon app.js"
+  }
+}
