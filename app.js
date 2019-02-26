@@ -9,4 +9,4 @@ app.use(express.static('public'));
 app.use('/', home);
 app.use('/', lab11);
 
-app.listen(80, () => console.log('hi'));
+app.listen(3000, () => console.log('hi'));
