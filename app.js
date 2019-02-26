@@ -9,4 +9,6 @@ app.use(express.static('public'));
 app.use('/', home);
 app.use('/', lab11);
 
-app.listen(3000, () => console.log('hi'));
+const port=process.env.PORT || 3000
+
+app.listen(port, () => console.log('hi', port));
