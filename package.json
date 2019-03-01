@@ -6,7 +6,11 @@
   "author": "Topiltzin <nokoayzack@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@material/top-app-bar": "^0.44.1",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "node-sass-middleware": "^0.11.0",
     "nodemon": "^1.18.10",
     "pug": "^2.0.3"
   },
