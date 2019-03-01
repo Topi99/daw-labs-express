@@ -2,8 +2,9 @@ const express         = require('express');
 const { home, lab11 } = require('./routes');
 const sassMiddleware  = require('node-sass-middleware');
 const path            = require('path');
-const logger       = require('morgan');
+const logger          = require('morgan');
 const bodyParser      = require('body-parser');
+const db              = require('./models');
 
 const app = express();
 
@@ -26,4 +27,6 @@ app.use('/', lab11);
 
 const port=process.env.PORT || 3000
 
-app.listen(port, () => console.log('hi', port));
+db.sequelize.sync().then(function() {
+  app.listen(port, () => console.log('hi', port));
+});
