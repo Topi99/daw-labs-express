@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express         = require('express');
 const { home, lab11 } = require('./routes');
 const sassMiddleware  = require('node-sass-middleware');
