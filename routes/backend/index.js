@@ -13,7 +13,7 @@ router.post('/backend/lab11', (req, res) => {
   let msg = 'Perfecto';
   let className = 'ok';
   
-  if(req.body.pwd1.length < 10 && req.body.pwd1 === req.body.pwd2) {
+  if(req.body.pwd1.length < 10 || req.body.pwd1 !== req.body.pwd2) {
     msg = 'Ingresaste una contraseña inválida o no fue la misma en los dos casos';
     className = 'err';
   }
