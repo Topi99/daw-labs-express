@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const express         = require('express');
-const { home, lab11 } = require('./routes');
+const { home, backend } = require('./routes');
 const sassMiddleware  = require('node-sass-middleware');
 const path            = require('path');
 const logger          = require('morgan');
@@ -25,7 +25,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use('/', home);
-app.use('/', lab11);
+app.use('/', backend);
 
 const port=process.env.PORT || 3000
 

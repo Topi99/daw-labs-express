@@ -6,6 +6,6 @@ sequelize = new Sequelize(process.env.DB);
 global.db = {
   Sequelize: Sequelize,
   sequelize: sequelize,
-  Product: sequelize.import(__dirname+'/Product')
+  Lab: sequelize.import(__dirname+'/Lab')
 };
 module.exports = global.db;

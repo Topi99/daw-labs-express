@@ -1,9 +1,17 @@
-@import './scss/bg';
+@import './scss/navbar';
+@import './scss/card';
 
 body, html, p, h1, h2, h3, h4, h5 {
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
   margin: 0;
+}
+
+body {
+  background-color: #F6F8FA;
+}
+
+main {
+  padding: 60px 0;
 }
 
 .regular {
@@ -16,4 +24,49 @@ body, html, p, h1, h2, h3, h4, h5 {
 
 .semi-bold {
   font-weight: 600;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+
+  .title {
+    padding-bottom: 15px;
+    font-size: 1.2rem;
+  }
+}
+
+form.password {
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr;
+  gap: 20px;
+  padding-top: 25px;
+  
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #0366d6;
+
+    &:focus {
+      outline: none;
+    }
+
+    &[type="submit"] {
+      background-color: #6697cf;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.err, .ok {
+  padding: 15px;
+}
+
+.err {
+  color: red;
+}
+
+.ok {
+  color: green;
 }

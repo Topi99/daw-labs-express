@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block content
+  .container.card
+    h4.title Pequeño validador de contraseñas
+    p Ingresa una contraseña con más de 10 caractéres
+    if msg
+      p(class=className)=msg
+    form(action="", method="post").password
+      input(type="password" name="pwd1", placeholder="Ingresa tu contraseña")
+      input(type="password" name="pwd2", placeholder="Confirma tu contraseña")
+      input(type="submit", value="Validar")
