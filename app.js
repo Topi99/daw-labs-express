@@ -24,6 +24,9 @@ app.use(sassMiddleware({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.locals.loged = false;
+app.locals.name = undefined;
+
 app.use('/', home);
 app.use('/', backend);
 

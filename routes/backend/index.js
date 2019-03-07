@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Image = require('../../models/index').Image;
 
 router.get('/backend', (req, res, next) => {
   res.render('backend/index.pug');
@@ -19,6 +20,31 @@ router.post('/backend/lab11', (req, res) => {
   }
   
   res.render('backend/lab11.pug', {msg, className});
+});
+
+router.get('/backend/lab13', async (req, res) => {
+  let { loged } = req.app.locals;
+  
+  const images = await Image.findAll();
+
+  res.render('backend/lab13.pug', { loged, images });
+});
+
+router.post('/backend/lab13', async (req, res) => {
+  let { loged } = req.app.locals;
+  let { name } = req.app.locals;
+  let photoURL = req.body.photoURL;
+
+  console.log(name, photoURL);
+  
+  await Image.create({
+    name,
+    photoURL
+  })
+
+  const images = await Image.findAll();
+  
+  res.render('backend/lab13.pug', { loged, images });
 });
 
 module.exports = router;
