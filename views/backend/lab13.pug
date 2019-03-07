@@ -1,0 +1,31 @@
+extends ../layout.pug
+
+block variables
+  - var varName = name
+
+block content
+  .container.card
+    h4.title Mini Foro (sin respuestas por ahora)
+    if loged 
+      form(action="", method="post", id="sendPic").grid
+        label() Selecciona tu foto:
+        input(type="file", name="file", id="file",data-multiple-caption="{count} files selected", multiple  ).hiddenFile
+        label(for="file").file Buscar...
+        input(type="text",style="display:none", name="photoURL", id="photoURL")
+      button(id="send").button Publicar
+    else
+      p Necesitas iniciar sesión para poder publicar
+      form(action="/login", method="post").grid
+        label(for="name") Escribe tu nombre:
+        input(type="text", name="name")
+        input(type="text",style="display:none", value="/backend/lab13", name="to")
+        input(type="submit", value="Ingresar").button
+  .imageGrid
+    for image in images
+      .image
+        img(src=image.photoURL)
+        p Publicado por: #{image.name}
+    
+block scripts
+  script(src="http://wzrd.in/standalone/uuid%2Fv4@latest")
+  script(src="/scripts/firebase.js")
