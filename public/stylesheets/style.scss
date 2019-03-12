@@ -1,5 +1,6 @@
 @import './scss/navbar';
 @import './scss/card';
+@import './scss/detail';
 
 :root {
   --red: red;
@@ -19,6 +20,10 @@ body {
 
 main {
   padding: 60px 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 .regular {
