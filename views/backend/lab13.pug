@@ -28,7 +28,8 @@ block content
     for image in images
       .image
         img(src=image.photoURL)
-        p Publicado por: #{image.name}
+        p 
+          a(href='/backend/lab14/' + image.id) Publicado por: #{image.name}
     
 block scripts
   script(src="https://wzrd.in/standalone/uuid%2Fv4@latest")
