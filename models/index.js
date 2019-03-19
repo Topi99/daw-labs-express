@@ -8,4 +8,5 @@ global.db = {
   sequelize: sequelize,
   Image: sequelize.import(__dirname+'/Image')
 };
+
 module.exports = global.db;

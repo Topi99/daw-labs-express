@@ -95,5 +95,22 @@ router.get('/backend/lab14/:id/delete', async (req, res) => {
   }
 });
 
+router.post('/backend/ajax', async (req, res) => {
+  try {
+    const images = await Image.findAll({
+      where: {
+        name: {
+          $iLike: `%${req.body.cadena}%`
+        }
+      }
+    });
+
+    res.json(images);
+  } catch(e) {
+    console.log(e);
+    res.redirect('/backend/lab13')
+  }
+});
+
 
 module.exports = router;

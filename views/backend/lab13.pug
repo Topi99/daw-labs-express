@@ -15,8 +15,8 @@ block content
       button(id="send").button Publicar
       form(action="/backend/lab14/like", method="post").grid
         label() Ingresa un nombre de autor a buscar
-        input(type="text", name="cadena")
-        input(type="submit", value="Buscar").button
+        input(type="text", name="cadena")#cadena
+        button.button#search Buscar
     else
       p Necesitas iniciar sesión para poder publicar
       form(action="/login", method="post").grid
@@ -32,5 +32,7 @@ block content
           a(href='/backend/lab14/' + image.id) Publicado por: #{image.name}
     
 block scripts
-  script(src="https://wzrd.in/standalone/uuid%2Fv4@latest")
+  //- script(src="https://wzrd.in/standalone/uuid%2Fv4@latest")
   script(src="/scripts/firebase.js")
+  script(src="https://unpkg.com/axios/dist/axios.min.js")
+  script(src="/scripts/ajax.js")
