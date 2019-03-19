@@ -3,7 +3,8 @@
 @import './scss/detail';
 
 :root {
-  --red: red;
+  --red: #cb2431;
+  --lred: #de4450;
   --green: #279f43;
   --bgc: #F6F8FA;
   --gray: #d1d5da;
@@ -143,6 +144,14 @@ input[type="text"], input[type="password"], .file {
   cursor: pointer;
 }
 
+.separate {
+  margin: 15px 0;
+}
+
+.sub {
+  font-weight: bold;
+}
+
 .button {
   padding: 6px 12px;
   font-size: 14px;
@@ -159,6 +168,17 @@ input[type="text"], input[type="password"], .file {
     background-image: linear-gradient(-180deg,#34d058,#28a745 75%);
     border: 1px solid rgba(27,31,35,.45);
   }
+
+  &.danger {
+    color: var(--red);
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    &:hover {
+      color: white;
+      background-image: linear-gradient(-180deg,var(--lred),var(--red) 70%);
+      border: 1px solid rgba(27,31,35,.45);
+    }
+  }
+
 }
 
 .hiddenFile {

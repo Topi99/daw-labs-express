@@ -1,0 +1,18 @@
+extends ../layout.pug
+
+block content
+  .card.detail
+    if imagen
+      .img-wrap
+        img(src=imagen.photoURL)
+      p.autor Publicado por: #{imagen.name}
+      p.fecha El: #{imagen.createdAt}
+      br
+      if error
+        p.err=error
+      p.separate.sub Editar Nombre:
+      form(action='./'+imagen.id, method="POST")
+        input(type="text", name="name", placeholder="Nombre")
+        input(type="submit", value="Actualizar").button.separate
+      form(action='./'+imagen.id+'/delete', method="GET")
+        input(type="submit", value="Eliminar Foto").danger.button

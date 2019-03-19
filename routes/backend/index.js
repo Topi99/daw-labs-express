@@ -64,13 +64,35 @@ router.post('/backend/lab14/like', async (req, res) => {
 });
 
 router.get('/backend/lab14/like', (req, res) => {
-  res.redirect('/backend/lab13')
+  res.redirect('/backend/lab13');
 });
 
 router.get('/backend/lab14/:id', async (req, res) => {
   const imagen = await Image.findById(req.params.id);
 
   res.render('backend/detail-image.pug', { imagen });
+});
+
+router.post('/backend/lab14/:id', async (req, res) => {
+  try {
+    await Image.update({name: req.body.name}, {where: {id: req.params.id}});
+    
+    res.redirect('/backend/lab14/'+req.params.id);
+  } catch(e) {
+    const imagen = await Image.findById(req.params.id);
+    res.render('backend/detail-image.pug', { imagen, error: 'Ha ocurrido un error 🤔' }) 
+  }
+});
+
+router.get('/backend/lab14/:id/delete', async (req, res) => {
+  try {
+    await Image.destroy({ where: { id: req.params.id } });
+    res.redirect('/backend/lab13');
+  } catch(e) {
+    console.log(e);
+    const imagen = await Image.findById(req.params.id);
+    res.render('backend/detail-image.pug', { imagen, error: 'Ha ocurrido un error 🤔' })
+  }
 });
 
 
