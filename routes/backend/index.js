@@ -59,7 +59,9 @@ router.post('/backend/lab14/like', async (req, res) => {
       }
     });
     console.log(images)
-    res.render('backend/lab13.pug', { images, loged });
+    // res.render('backend/lab13.pug', { images, loged });
+    // Aquí respondo con json
+    res.json({ images, loged });
   } catch(e) { res.redirect('/backend/lab13') }
 });
 
@@ -105,6 +107,7 @@ router.post('/backend/ajax', async (req, res) => {
       }
     });
 
+    // Aquí respondo con json, también
     res.json(images);
   } catch(e) {
     console.log(e);
